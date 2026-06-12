@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Beebee ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    overflow:hidden;
+
+    background-image:url("simu1.jpeg");
+    background-size:contain;
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-color:black;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.35);
+    z-index:-1;
+}
+
+.page{
+    display:none;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:20px;
+}
+
+.active{
+    display:flex;
+}
+
+h1,h2,p{
+    color:white;
+    text-shadow:2px 2px 10px black;
+}
+
+p{
+    font-size:22px;
+    max-width:800px;
+    line-height:1.8;
+}
+
+button{
+    margin-top:25px;
+    padding:14px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+.next{
+    background:#ff69b4;
+    color:white;
+}
+
+.yes{
+    background:#4CAF50;
+    color:white;
+}
+
+.no{
+    background:#ff4d4d;
+    color:white;
+}
+
+input{
+    padding:12px;
+    font-size:18px;
+    border-radius:10px;
+    border:none;
+    text-align:center;
+}
+
+.radhe{
+    font-size:60px;
+    color:#ffd700;
+    animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #ffd700;
+    }
+    to{
+        text-shadow:0 0 40px #ffffff;
+    }
+}
+
+.floating{
+    position:absolute;
+    font-size:30px;
+    animation:floatUp 5s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-100px);
+        opacity:0;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="page1" class="page active">
+<h1>Hey Beebee ❤️</h1>
+
+<p>
+You are so important to me.<br>
+Your smile brightens my day.<br>
+Today I have something special for you...
+</p>
+
+<button class="next" onclick="nextPage(2)">
+Next ➜
+</button>
+</div>
+
+<div id="page2" class="page">
+<h1>A Little Secret 🤫</h1>
+
+<p>
+Whenever life gets difficult,
+thinking about you makes me smile.<br>
+Ready for a small Vrindavan quiz? 🌸
+</p>
+
+<button class="next" onclick="nextPage(3)">
+Continue ❤️
+</button>
+</div>
+
+<div id="page3" class="page">
+<h1>Vrindavan Question 1 🌸</h1>
+
+<p>
+Who is known as the Queen of Vrindavan?
+</p>
+
+<button class="next" onclick="nextPage(4)">
+Radha Rani ❤️
+</button>
+</div>
+
+<div id="page4" class="page">
+<h1>Question 2 🌸</h1>
+
+<p>
+Who stole butter in Gokul? 😏
+</p>
+
+<button class="next" onclick="nextPage(5)">
+Krishna 💙
+</button>
+</div>
+
+<div id="page5" class="page">
+<h1>Question 3 🌸</h1>
+
+<p>
+Which place is famous for Prem Mandir?
+</p>
+
+<button class="next" onclick="nextPage(6)">
+Vrindavan ❤️
+</button>
+</div>
+
+<div id="page6" class="page">
+<h1>Question 4 🌸</h1>
+
+<p>
+Who is Krishna's eternal beloved?
+</p>
+
+<button class="next" onclick="nextPage(7)">
+Radha ❤️
+</button>
+</div>
+
+<div id="page7" class="page">
+<h1>Question 5 🌸</h1>
+
+<p>
+What is the most beautiful thing in devotion?
+</p>
+
+<button class="next" onclick="nextPage(8)">
+Pure Love ❤️
+</button>
+</div>
+
+<div id="page8" class="page">
+<h1>One Important Question 😏</h1>
+
+<p>
+Who is my favourite person in this whole world?
+</p>
+
+<input
+id="favName"
+type="text"
+placeholder="Type the name..."
+
+>
+
+<button class="next" onclick="checkName()">
+Submit ❤️
+</button>
+</div>
+
+<div id="page9" class="page">
+<h1>Do You Love Me? ❤️</h1>
+
+<button class="yes" onclick="nextPage(11)">
+YES 💖
+</button>
+
+<button class="no" onclick="nextPage(10)">
+NO 😒
+</button>
+</div>
+
+<div id="page10" class="page">
+<h1>Do You Love Me More Than Yesterday? ❤️</h1>
+
+<p>
+I think that NO was clicked accidentally 😏
+</p>
+
+<button class="yes" onclick="nextPage(11)">
+YES ❤️
+</button>
+</div>
+<div id="page11" class="page">
+
+<h1>😏❤️</h1>
+
+<p>
+I think my Beebee said NO on 13th May at 12:00 PM 😏❤️
+<br><br>
+
+And is now getting ready to fulfill
+one special wish of mine 🎁✨
+<br><br>
+
+That makes me the happiest person in the world ❤️🥺
+</p>
+
+<button class="next" onclick="nextPage(12)">
+Continue ➜
+</button>
+
+</div>
+<div id="page11" class="page">
+<h1>🎂 HAPPY BIRTHDAY BEEBEE 🎂</h1>
+
+<p>
+On your special day, I want you to know how much you mean to me.<br><br>
+
+Thank you for every smile, every laugh,
+every memory and every moment.<br><br>
+
+You make life brighter simply by being in it.<br><br>
+
+May this year bring you happiness,
+success, peace and countless reasons to smile.<br><br>
+
+May all your dreams come true and may your heart always stay as beautiful as it is today.<br><br>
+
+And no matter where life takes us,
+you'll always have a special place in my heart. ❤️
+And remember this "You are more than a best friend to me and I love you ❤️"
+
+</p>
+
+<button class="next" onclick="radhePage()">
+One Last Thing ✨
+</button>
+</div>
+
+<div id="page12" class="page">
+
+<div class="radhe">
+❤️ LOVE YOU FOREVER MY BEBEE ❤️
+</div>
+
+<h2>
+🌸 RADHE RADHE 🌸
+</h2>
+
+<p>
+May Radha Rani and Krishna always bless you with happiness,
+peace, love and togetherness forever. ❤️
+</p>
+
+</div>
+
+<script>
+
+function show(id){
+
+document.querySelectorAll(".page").forEach(page=>{
+page.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+
+}
+
+function nextPage(n){
+show("page"+n);
+}
+
+function checkName(){
+
+let name=
+document.getElementById("favName")
+.value
+.trim()
+.toUpperCase();
+
+if(name==="SIMU"){
+show("page9");
+}
+else{
+alert("Hint 😏❤️ : Starts with S");
+alert("Think carefully... she's the most special person in my life ❤️");
+}
+
+}
+
+function radhePage(){
+
+show("page12");
+
+setInterval(()=>{
+
+let item=document.createElement("div");
+
+item.className="floating";
+
+let things=[
+"❤️",
+"💖",
+"💕",
+"🌸",
+"✨",
+"RADHE ❤️",
+"KRISHNA 💙"
+];
+
+item.innerHTML=
+things[Math.floor(Math.random()*things.length)];
+
+item.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(item);
+
+setTimeout(()=>{
+item.remove();
+},5000);
+
+},300);
+
+}
+
+</script>
+
+</body>
+</html>
